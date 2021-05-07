@@ -3,7 +3,7 @@ name: 自动更新
 on:
   push:
   schedule:
-  - cron: "*/30 * * * *"
+  - cron: "*/5 * * * *"
 
 jobs:
   build:
