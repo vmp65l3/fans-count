@@ -15,7 +15,7 @@ jobs:
         python-version: 3.9
     
     - name: Renew
-      run: python3 fans.py
+      run: python3 fans_count.py
 
     - name: Commit and push
       run: |
