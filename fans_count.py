@@ -4,7 +4,7 @@ data = urllib.request.urlopen("https://api.bilibili.com/x/web-interface/card?mid
 xinxi = data.read().decode('utf-8')
 dict = json.loads(xinxi)
 fans = dict['data']['card']['fans']
-t = time.strftime('%Y-%m-%d-%H-%M', time.localtime())
+t = time.strftime('%m-%d', time.localtime())
 
 add_info = t + ',' + str(fans) + '\n'
 
@@ -15,7 +15,10 @@ with open('data.csv','a') as f:
 from pandas import read_csv
 import matplotlib.pyplot as plt
 
-series = read_csv('data.csv',header=0, index_col=0, parse_dates=None, squeeze=True)
+series = read_csv('data.csv',header=0, index_col=0, parse_dates=True, squeeze=True)
 
 series.plot()
-plt.show()
+plt.xlabel('Date')
+
+plt.savefig('粉丝数趋势.pdf', bbox_inches='tight', dpi=360, pad_inches=0)
+#输出图片并去除白边
