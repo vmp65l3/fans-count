@@ -20,5 +20,5 @@ series = read_csv('data.csv',header=0, index_col=0, parse_dates=True, squeeze=Tr
 series.plot()
 plt.xlabel('Date')
 
-plt.savefig('粉丝数趋势.pdf', bbox_inches='tight', dpi=360, pad_inches=0)
+plt.savefig('粉丝数趋势.jpg', bbox_inches='tight', dpi=360, pad_inches=0)
 #输出图片并去除白边
