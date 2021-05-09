@@ -2,7 +2,8 @@ name: 自动更新
 
 on:
   schedule:
-  - cron: "0/60 * * * *"
+  - cron: "0 0/3 * * *"
+  push:
 
 jobs:
   build:
