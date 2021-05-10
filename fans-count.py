@@ -10,7 +10,9 @@ bjtime = bjtime.strftime('%m-%d')
 
 data = urllib.request.urlopen("https://api.bilibili.com/x/web-interface/card?mid=286429414")
 xinxi = data.read().decode('utf-8')
+
 dict = json.loads(xinxi)
+
 fans = dict['data']['card']['fans']
 
 add_info = bjtime + ',' + str(fans) + '\n'

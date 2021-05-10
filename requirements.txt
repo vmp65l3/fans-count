@@ -1,4 +1,3 @@
-json
 pandas
 matplotlib
 datetime
