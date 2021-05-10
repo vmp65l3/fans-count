@@ -1,4 +1,4 @@
-import urllib.request,
+import urllib.request
 import json
 from datetime import datetime, timedelta
 from pandas import read_csv
