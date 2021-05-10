@@ -1,9 +1,12 @@
-import urllib.request,json
+import urllib.request,
+import json
 from datetime import datetime, timedelta
+from pandas import read_csv
+import matplotlib.pyplot as plt
 
 utctime = datetime.utcnow()
 bjtime = utctime + timedelta(hours=8)
-bjtime = bjtime.strftime('%Y-%m-%d')
+bjtime = bjtime.strftime('%m-%d')
 
 data = urllib.request.urlopen("https://api.bilibili.com/x/web-interface/card?mid=286429414")
 xinxi = data.read().decode('utf-8')
@@ -18,8 +21,7 @@ with open('data.csv','a') as f:
 
 
 
-from pandas import read_csv
-import matplotlib.pyplot as plt
+
 
 series = read_csv('data.csv',header=0, index_col=0, parse_dates=True, squeeze=True)
 
