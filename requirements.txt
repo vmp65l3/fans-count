@@ -1,5 +1,4 @@
 pandas
 matplotlib
-json
 datetime
 urllib
